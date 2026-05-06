@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% include 'includes/alertas.html' %}
+<h1>Tareas</h1>
+<a href="{% url 'tareas:crear' %}" class="btn btn-primary">Crear</a>
+{% if tareas %}
+<ul>
+    {% for tarea in tareas %}
+    <li>{{ tarea }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2>No hay tareas!</h2>
+{% endif %}
+{% endblock %}
